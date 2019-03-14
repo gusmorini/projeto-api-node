@@ -71,8 +71,9 @@ const validateUpdate = {
 
 router.post('/', validateSchema(validateRegister), controller.register);
 router.get('/:clientId', controller.findClienId);
-router.get('/', controller.findAll );
-router.put('/:id', validateSchema(validateUpdate) , controller.update);
+router.get('/', controller.findAll);
+router.get('/detail/:id', controller.findById);
+router.put('/:id', validateSchema(validateUpdate), controller.update);
 router.delete('/destroy/:id', controller.destroy);
 
 module.exports = router;
